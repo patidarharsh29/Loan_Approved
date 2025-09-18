@@ -10,7 +10,7 @@ st.title("Loan Approval Prediction App ❤️")
 st.markdown("Fill applicant details below:")
 
 # User Inputs
-loan_id = st.text_input("Loan ID", "LN001")
+
 no_of_dependents = st.number_input("Number of Dependents", 0, 10, 0)
 income_annum = st.number_input("Annual Income", 0, 100000000, 500000)
 loan_amount = st.number_input("Loan Amount", 0, 100000000, 200000)
@@ -27,7 +27,6 @@ self_employed = st.selectbox("Self Employed", ["No", "Yes"])
 if st.button("Predict"):
     # Convert categorical to match dummies
     raw_input = {
-        "loan_id": sum([ord(c) for c in str(loan_id)]),  # convert string to numeric
         "no_of_dependents": no_of_dependents,
         "income_annum": income_annum,
         "loan_amount": loan_amount,
